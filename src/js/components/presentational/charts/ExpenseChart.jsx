@@ -23,7 +23,7 @@ const ExpenseChart = ({ data }) => {
   const myData = formatData(data);
   return (
     <div className="pie">
-      <PieChart width={550} height={250}>
+      <PieChart width={550} height={230}>
         <Pie
           data={myData}
           label
