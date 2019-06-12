@@ -5,7 +5,7 @@ const path = require("path");
 const server = express();
 
 // server.use(express.static(__dirname + "/"));
-// server.use(express.static("dist"));
+server.use(express.static("dist"));
 server.get("/*", (req, res) => {
   const url = path.join(__dirname, "/dist", "index.html");
   if (!url.startsWith("/app/"))
