@@ -1,0 +1,45 @@
+@import "themeColors";
+
+.header {
+  color: $gray-dark;
+  height: 10vh;
+  background-color: $themeColor-dark;
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+  .logo,
+  .nav {
+    padding: 0 2rem;
+  }
+}
+.nav {
+  font-size: 1.5rem;
+}
+.logo {
+  display: flex;
+  font-weight: 700;
+  font-size: 2rem;
+  background-color: darken($color: $themeColor-dark, $amount: 9);
+  height: 100%;
+  align-items: center;
+  width: 20vw;
+  clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+
+  a {
+    color: $gray-light;
+    letter-spacing: 6px;
+  }
+}
+.nav {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  a {
+    align-self: center;
+  }
+  a:hover {
+    color: $gray-light;
+    border-top: 1px solid $gray-dark;
+    border-bottom: 1px solid $gray-dark;
+  }
+}

@@ -1,0 +1,65 @@
+.tables {
+  background-color: lighten($color: $themeColor-dark, $amount: 12);
+  border-radius: 1rem;
+  margin: 0 1rem;
+  height: 50vh;
+  text-align: center;
+  vertical-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  table {
+    padding: 1rem;
+    // width: 10px;
+  }
+  .expense-table {
+    position: relative;
+    top: 0vh;
+    z-index: 0;
+    max-height: 20vh;
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
+
+    th {
+      position: sticky;
+      top: 0vh;
+      border-radius: 1rem;
+    }
+  }
+  .accounts-table {
+    position: relative;
+    top: 0vh;
+    z-index: 0;
+    max-height: 20vh;
+    th {
+      position: sticky;
+      top: 3vh;
+    }
+  }
+  th {
+    background-color: $themeColor-dark;
+    padding: 0 1rem;
+    border-radius: 1rem;
+  }
+  tr {
+    padding: 0.5rem 0;
+    cursor: default;
+    border-radius: 1rem;
+  }
+}
+.warning-row td {
+  border: red 1px solid;
+  color: #ddd;
+  font-weight: 500;
+}
+
+tr.data-row:hover {
+  background-color: #ffffff7f;
+  border-radius: 1rem;
+  td {
+    border-radius: 1rem;
+  }
+}

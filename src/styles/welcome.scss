@@ -1,0 +1,77 @@
+@import "themeColors";
+
+@keyframes fadein {
+  0% {
+    transform: scale3d(2, 2, 12) translateY(10rem);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale3d(1, 1, 1) translateY(0);
+    opacity: 1;
+  }
+}
+
+// #wrapper.fading-in {
+//   animation: fadein 0.5s ease-out;
+// }
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &.fading-in {
+    animation: fadein 0.5s ease-out;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    transform: scale3d(1, 1, 1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale3d(0.4, 0.4, 1.4) translateY(-7rem);
+    opacity: 0;
+  }
+}
+
+@keyframes btn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.welcome-signin {
+  font-weight: 800;
+  cursor: pointer;
+  opacity: 0;
+  animation-name: btn;
+  animation-delay: 1s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  margin-top: 1rem;
+  background-color: $themeColor-dark;
+  font-size: 1.2rem;
+  width: 20vw;
+  height: 2rem;
+  transition: all 0.25s;
+  border-radius: 0.5rem;
+  border: 2px lighten($color: $themeColor-dark, $amount: 10) solid;
+
+  &:hover {
+    background-color: lighten($color: $themeColor-dark, $amount: 5);
+    border-radius: 2rem;
+    letter-spacing: 0.2rem;
+  }
+  &:active {
+    letter-spacing: 0;
+    background-color: darken($color: $themeColor-dark, $amount: 10);
+  }
+}
+
+#wrapper.fading-out {
+  animation: fadeout 0.3s ease-in forwards;
+}

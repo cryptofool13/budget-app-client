@@ -1,0 +1,97 @@
+// @import "themeColors";
+
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+}
+
+.form {
+  width: 35vw;
+  margin: 2rem;
+  background-color: $themeColor-light;
+  padding: 0 2rem;
+  padding-bottom: 2rem;
+  border-radius: 2rem;
+}
+
+.email,
+.password {
+  padding: 1rem 0.5rem;
+}
+.btn {
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 1rem;
+  background-color: lighten($color: $themeColor-dark, $amount: 2);
+  font-size: 1.2rem;
+  border: none;
+  width: 100%;
+  height: 2rem;
+  transition: all 0.25s;
+  border-radius: 0.5rem;
+  border: 2px lighten($color: $themeColor-dark, $amount: 10) solid;
+
+  &:hover {
+    background-color: lighten($color: $themeColor-dark, $amount: 5);
+    border-radius: 2rem;
+    letter-spacing: 0.2rem;
+  }
+  &:active {
+    letter-spacing: 0;
+    background-color: darken($color: $themeColor-dark, $amount: 10);
+  }
+}
+.error {
+  color: $danger;
+  height: 1rem;
+}
+
+.form-header {
+  padding: 1rem 0;
+  margin: 1rem 0;
+  font-weight: 800;
+  text-align: center;
+  height: 100%;
+  background-color: $themeColor-light;
+  border-radius: 3rem;
+}
+fieldset {
+  border: none;
+  display: flex;
+  label {
+    width: 100%;
+    input {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    transform: scale3d(1, 1, 1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale3d(0.4, 0.4, 1.4) translateY(-7rem);
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    transform: scale3d(1.5, 1.5, 1.5) translateY(9rem);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale3d(1, 1, 1) translateY(0);
+    opacity: 1;
+  }
+}
+section.fading-in {
+  animation: fadein 0.5s ease-out;
+}
+section.fading-out {
+  animation: fadeout 0.3s ease-in forwards;
+}

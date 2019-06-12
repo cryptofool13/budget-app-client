@@ -1,0 +1,65 @@
+@import "themeColors";
+
+$themeFont: verdana, sans-serif;
+
+*,
+*::before,
+*::after {
+  text-decoration: none;
+  color: $gray-dark;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $themeFont;
+  height: 100vh;
+  background-color: rgb(179, 202, 219);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.modal-main {
+  position: fixed;
+  background: ($themeColor-light);
+  width: 35vw;
+  padding: 0 2rem;
+  border-radius: 2rem;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  form {
+    width: 100%;
+    fieldset {
+      width: 100%;
+
+      input {
+        // text-align: center;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
