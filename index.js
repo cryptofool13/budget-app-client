@@ -6,7 +6,11 @@ const server = express();
 server.use(express.static(__dirname + "/"));
 server.use(express.static("dist"));
 server.get("/*", (req, res) => {
-  res.sendFile(path.join("dist", "index.html"));
+  const url = path.join(__dirname, "/dist", "index.html");
+  if (!url.startsWith("/app/"))
+    // we're on local windows
+    url = url.substring(1);
+  res.sendFile(url);
 });
 
 server.listen(process.env.PORT, () => {
