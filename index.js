@@ -3,13 +3,12 @@ const express = require("express");
 const path = require("path");
 
 const server = express();
-
+// server;
 server.use(express.static("dist"));
 server.get("/*", (req, res) => {
-  const url = path.join(__dirname, "/dist", "index.html");
-  if (!url.startsWith("/app/"))
-    // we're on local windows
-    url = url.substring(1);
+  let url = path.join(__dirname, "/dist", "index.html");
+
+  console.log(url);
   res.sendFile(url);
 });
 
