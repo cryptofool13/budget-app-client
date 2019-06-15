@@ -3,7 +3,10 @@
 .header {
   color: $gray-dark;
   height: 10vh;
-  background-color: $themeColor-dark;
+  background-image: linear-gradient(
+    $themeColor-dark,
+    darken($themeColor-dark, 6)
+  );
   display: flex;
   justify-content: space-between;
   // align-items: center;
@@ -15,6 +18,7 @@
 .nav {
   font-size: 1.5rem;
 }
+.logo,
 .logo {
   display: flex;
   font-weight: 700;
@@ -25,7 +29,9 @@
   width: 20vw;
   clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 
-  a {
+  a,
+  a:focus {
+    outline: none;
     color: $gray-light;
     letter-spacing: 6px;
   }
@@ -37,9 +43,11 @@
   a {
     align-self: center;
   }
-  a:hover {
+  a:hover,
+  a:focus {
     color: $gray-light;
     border-top: 1px solid $gray-dark;
     border-bottom: 1px solid $gray-dark;
+    outline: none;
   }
 }

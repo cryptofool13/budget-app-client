@@ -42,6 +42,7 @@ const FundsForm = props => {
       {renderPrompts()}
 
       <button
+        className="btn next-button"
         type="submit"
         onClick={() => {
           setTimeout(() => done(true), 0);

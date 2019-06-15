@@ -4,7 +4,10 @@
   height: 10vh;
   bottom: 0vh;
   width: 100%;
-  background-color: $themeColor-dark;
+  background-image: linear-gradient(
+    darken($themeColor-dark, 6),
+    $themeColor-dark
+  );
   display: flex;
   align-items: center;
   z-index: 5;

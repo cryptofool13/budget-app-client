@@ -7,3 +7,27 @@
   background-color: $themeColor-light;
   border-radius: 3rem;
 }
+
+// button.update-button {
+//   font-weight: 800;
+//   cursor: pointer;
+//   margin-top: 1rem;
+//   background-color: lighten($color: $themeColor-dark, $amount: 2);
+//   font-size: 1.2rem;
+//   border: none;
+//   width: 100%;
+//   height: 2rem;
+//   transition: all 0.25s;
+//   border-radius: 0.5rem;
+//   border: 2px lighten($color: $themeColor-dark, $amount: 10) solid;
+
+//   &:hover {
+//     background-color: lighten($color: $themeColor-dark, $amount: 5);
+//     border-radius: 2rem;
+//     letter-spacing: 0.2rem;
+//   }
+//   &:active {
+//     letter-spacing: 0;
+//     background-color: darken($color: $themeColor-dark, $amount: 10);
+//   }
+// }

@@ -19,7 +19,9 @@ const FundsInit = ({ onAdd }) => {
         <label htmlFor="balance">Balance</label>
         <Field name="balance" component="input" type="number" />
       </fieldset>
-      <button onClick={onAdd}>Add</button>
+      <button className="add-button" onClick={onAdd}>
+        Add
+      </button>
     </>
   );
 };

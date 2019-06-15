@@ -42,6 +42,9 @@ main {
     letter-spacing: 0;
     background-color: darken($color: $themeColor-dark, $amount: 10);
   }
+  &.close-button {
+    transform: translateY(-1rem);
+  }
 }
 .error {
   color: $danger;
