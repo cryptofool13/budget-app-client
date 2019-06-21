@@ -1,4 +1,4 @@
-//  http://localhost:8001
+//  https://budgetbackend.herokuapp.com
 // https://budgetbackend.herokuapp.com
 
 import axios from 'axios';
@@ -17,7 +17,7 @@ import {
 export const signup = (formProps, cb) => async dispatch => {
   try {
     const response = await axios.post(
-      'http://localhost:8001/api/signup',
+      'https://budgetbackend.herokuapp.com/api/signup',
       formProps
     );
 
@@ -40,7 +40,7 @@ export const signout = () => {
 export const signin = (formProps, cb) => async dispatch => {
   try {
     const response = await axios.post(
-      'http://localhost:8001/api/signin',
+      'https://budgetbackend.herokuapp.com/api/signin',
       formProps
     );
 
@@ -59,9 +59,12 @@ export const resetAuthError = () => dispatch => {
 export const getTableFunds = () => async dispatch => {
   try {
     let token = localStorage.getItem('token');
-    const response = await axios.get('http://localhost:8001/api/funds', {
-      headers: {Authorization: token},
-    });
+    const response = await axios.get(
+      'https://budgetbackend.herokuapp.com/api/funds',
+      {
+        headers: {Authorization: token},
+      }
+    );
 
     if (response.data.error) {
       return dispatch({type: FUND_DATA_ERROR, payload: response.data.error});
@@ -79,9 +82,12 @@ export const getTableFunds = () => async dispatch => {
 export const getChartFunds = () => async dispatch => {
   try {
     let token = localStorage.getItem('token');
-    const response = await axios.get('http://localhost:8001/api/funds/data', {
-      headers: {Authorization: token},
-    });
+    const response = await axios.get(
+      'https://budgetbackend.herokuapp.com/api/funds/data',
+      {
+        headers: {Authorization: token},
+      }
+    );
 
     if (response.data.error) {
       return dispatch({type: FUND_DATA_ERROR, payload: response.data.error});
@@ -99,9 +105,12 @@ export const getChartFunds = () => async dispatch => {
 export const getTableExpenses = () => async dispatch => {
   try {
     let token = localStorage.getItem('token');
-    const response = await axios.get('http://localhost:8001/api/spending/ls', {
-      headers: {Authorization: token},
-    });
+    const response = await axios.get(
+      'https://budgetbackend.herokuapp.com/api/spending/ls',
+      {
+        headers: {Authorization: token},
+      }
+    );
 
     if (response.data.error) {
       return dispatch({
@@ -128,7 +137,7 @@ export const addFunds = formProps => async dispatch => {
       entry.push(acct);
     }
     const response = axios.post(
-      'http://localhost:8001/api/funds',
+      'https://budgetbackend.herokuapp.com/api/funds',
       {funds: entry},
       {
         headers: {Authorization: token},
@@ -137,7 +146,7 @@ export const addFunds = formProps => async dispatch => {
   } catch (e) {
     dispatch({
       type: FUND_DATA_ERROR,
-      payload: `something went wrong posting to http://localhost:8001/api/funds: ${e}`,
+      payload: `something went wrong posting to https://budgetbackend.herokuapp.com/api/funds: ${e}`,
     });
   }
 };
@@ -147,7 +156,7 @@ export const seedFunds = formProps => async dispatch => {
     let token = localStorage.getItem('token');
 
     const response = axios.post(
-      'http://localhost:8001/api/funds',
+      'https://budgetbackend.herokuapp.com/api/funds',
       {funds: formProps},
       {
         headers: {Authorization: token},
@@ -156,7 +165,7 @@ export const seedFunds = formProps => async dispatch => {
   } catch (e) {
     dispatch({
       type: FUND_DATA_ERROR,
-      payload: `something went wrong posting to http://localhost:8001/api/funds: ${e}`,
+      payload: `something went wrong posting to https://budgetbackend.herokuapp.com/api/funds: ${e}`,
     });
   }
 };
@@ -169,7 +178,7 @@ export const queueExpenseData = formProps => async dispatch => {
       entry.push(formProps[item]);
     }
     axios.post(
-      'http://localhost:8001/api/spending',
+      'https://budgetbackend.herokuapp.com/api/spending',
       {expenses: entry},
       {
         headers: {Authorization: token},
@@ -178,7 +187,7 @@ export const queueExpenseData = formProps => async dispatch => {
   } catch (e) {
     dispatch({
       type: EXPENSE_DATA_ERROR,
-      payload: `something went wrong posting to http://localhost:8001/api/spending: ${e}`,
+      payload: `something went wrong posting to https://budgetbackend.herokuapp.com/api/spending: ${e}`,
     });
   }
 };
@@ -187,9 +196,12 @@ export const queueExpenseData = formProps => async dispatch => {
 export const getChartExpenses = () => async dispatch => {
   try {
     let token = localStorage.getItem('token');
-    const response = await axios.get('http://localhost:8001/api/spending/set', {
-      headers: {Authorization: token},
-    });
+    const response = await axios.get(
+      'https://budgetbackend.herokuapp.com/api/spending/set',
+      {
+        headers: {Authorization: token},
+      }
+    );
 
     if (response.data.error) {
       return dispatch({
