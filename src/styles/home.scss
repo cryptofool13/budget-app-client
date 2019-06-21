@@ -5,9 +5,10 @@ main.home {
   height: 70vh;
   margin: 2rem 2rem;
   display: grid;
-  grid-template-columns: [leftside] 1fr [midcol] 1fr [rightside];
+  grid-template-columns: [leftside] 1fr [midcol] 2fr [rightside];
   grid-template-rows: [topside] 1fr [bottomside];
   border-radius: 1rem;
+  box-shadow: inset 0px 5px 18px; 
 }
 section.tables {
   grid-row: [topside] / [bottomside];
