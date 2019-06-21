@@ -8,7 +8,6 @@ server.use(express.static("dist"));
 server.get("/*", (req, res) => {
   let url = path.join(__dirname, "/dist", "index.html");
 
-  console.log(url);
   res.sendFile(url);
 });
 
